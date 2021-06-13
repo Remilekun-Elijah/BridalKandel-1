@@ -836,7 +836,8 @@ import ScrollAnimation from 'react-animate-on-scroll';
     
     <div className="text-center">
     <button className="p-2 font-bold border bg-purple-800 text-white mt-24 rounded text-center">
-      LOAD MORE ITEMS
+      LOAD MORE ITEMS FOR ME 
+      
     </button>
     </div>
 
