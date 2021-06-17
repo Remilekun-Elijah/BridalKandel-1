@@ -3,7 +3,6 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 
 
-// const Packages = () => (
   class Packages extends Component {
     constructor(props) {
       super(props);
@@ -836,8 +835,8 @@ import ScrollAnimation from 'react-animate-on-scroll';
     
     <div className="text-center">
     <button className="p-2 font-bold border bg-purple-800 text-white mt-24 rounded text-center">
-      LOAD MORE ITEMS FOR ME 
-      
+      LOAD MORE ITEMS 
+
     </button>
     </div>
 
