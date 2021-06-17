@@ -15,7 +15,8 @@ const WhyChooseUs = () => (
                         pellentesque a non felis maecenas module vimeo at malesuada. Primus elit lectus at
                         felis malesuada ultricies obec curabitur et ligula sande porta node vestibulum une
                         commodo a convallis laoreet enim. Morbi at sinum interdum etos fermentum. Nulla elite
-                            terminal integer. Suspendisse a novum etos module un metro.
+                            terminal integer. Suspendisse a novum etos module un metro. we are available for you.
+                            
                             </p>
                     </div>
                     <div className="mt-10">
