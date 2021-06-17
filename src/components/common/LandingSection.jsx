@@ -45,20 +45,6 @@ class LandingSection extends Component {
               <NavLink to="/services" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
                 SERVICES
             </NavLink>
-             
-              {
-                cookies.get('token') ? <NavLink to="/dashboard" activeClassName="active" className="nav-link" >
-                  <button className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                    MANAGE
-                  </button>
-                </NavLink> :
-                  <NavLink to="/authentication" activeClassName="active" className="nav-link" >
-                    <button className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                      LOGIN
-                    </button>
-                  </NavLink>
-              }
-
             </div> :
             window.screen.width > 1000 ?
               <div className="flex-auto font-semibold mt-6 md:mt-6 lg:mt-0 xl:mt-0 text-center md:text-center lg:text-right xl:text-right lg:items-center text-white text-xs mt-2 text-right px-4">
@@ -70,19 +56,6 @@ class LandingSection extends Component {
                   SERVICES
             </NavLink>
 
-              
-                {/* {
-                  cookies.get('token') ? <NavLink to="/dashboard" activeClassName="active" className="nav-link" >
-                    <button className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                      MANAGE
-                    </button>
-                  </NavLink> :
-                    <NavLink to="/authentication" activeClassName="active" className="nav-link" >
-                      <button className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-2 md:mt-2 lg:mt-0 xl:mt-0">
-                        LOGIN
-                      </button>
-                    </NavLink>
-                } */}
                 <div className="ml-10 text-white text-xl inline-block">
                   <span className="mr-4 cursor-pointer"><i className="fa fa-facebook" aria-hidden="true"></i></span>
                   <span className="mr-4 cursor-pointer"><i className="fa fa-instagram" aria-hidden="true"></i></span>
