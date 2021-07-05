@@ -10,7 +10,7 @@ const Footer = () => (
                     Bridal Kandel | © Copyright all rights reserved.
                     </p>
                     <p>
-                   Built By: Damilola Ipadeola
+                   Built By: Damilola Ipadeola Williams
                     </p>
 
                     
