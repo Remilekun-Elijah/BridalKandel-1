@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Register extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Register extends Component {
   }
 
   render() {
-    const { errors } = this.props;
+    const {} = this.props;
     
     return (
       <div

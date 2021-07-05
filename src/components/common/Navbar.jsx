@@ -4,21 +4,13 @@ import { logoutAction } from '../../actions/authAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { returnBackendError } from '../../helper'
-import { authenticatedUser, resendVerificationAction, phoneVerification } from '../../actions/authAction';
+import { authenticatedUser } from '../../actions/authAction';
 
 class Navbar extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            loadingVerification: false,
-            verifyData: {},
-            errorResponse: {}
-        }
-        this.onSendVerificationCode = this.onSendVerificationCode.bind(this);
-        this.onVerifyPhone = this.onVerifyPhone.bind(this);
-        this.onChange = this.onChange.bind(this);
-        this.toggleModal = this.toggleModal.bind(this);
-        this.onFocus = this.onFocus.bind(this);
+        this.state = {}
+      
     }
 
     handleLogout = () => {
@@ -37,84 +29,21 @@ class Navbar extends Component {
             })
     }
 
-    toggleModal = (event) => {
-        let modal = document.querySelector('.verifyModal')
-        modal.classList.toggle('opacity-0')
-        modal.classList.toggle('pointer-events-none')
-    }
+    // toggleModal = (event) => {
+    //     let modal = document.querySelector('.verifyModal')
+    //     modal.classList.toggle('opacity-0')
+    //     modal.classList.toggle('pointer-events-none')
+    // }
 
-    onChange(event) {
-        let verifyData = this.state.verifyData
-        verifyData[event.target.name] = event.target.value
-        this.setState(() => ({ verifyData }))
-    }
+    // onChange(event) {
+    //     let verifyData = this.state.verifyData
+    //     verifyData[event.target.name] = event.target.value
+    //     this.setState(() => ({ verifyData }))
+    // }
 
-
-    onSendVerificationCode() {
-        this.setState(() => ({ loadingVerification: true }))
-        this.props.actions.resendVerificationAction()
-            .then(res => {
-                this.setState(() => ({ loadingVerification: false }))
-                if (res === 'success') {
-                    this.setState(() => ({
-                        successResponse: 'Verification code has been resent to your phone'
-                    }), () => {
-                        this.toggleModal()
-                    })
-                } else {
-                    this.setState(() => ({ resendVerCodeError: this.props.resendVerCodeError }))
-                }
-            })
-    }
-
-    onVerifyPhone(event) {
-        event.preventDefault();
-        this.setState(() => ({
-            disableBtn: true,
-            loading: true,
-            successResponse: '',
-            error: ''
-        }))
-        this.props.actions.phoneVerification(this.state.verifyData)
-            .then((res) => {
-                this.setState(() => ({
-                    disableBtn: false,
-                    loading: false
-                }))
-                if (res === 'success') {
-                    this.setState(() => ({
-                        successResponse: 'Phone number verified succesfully.'
-                    }))
-                    this.toggleModal()
-                } else {
-                    if (Object.keys(this.props.verifyPhoneError).length !== 0) {
-                        const errorResponse = returnBackendError(this.props.verifyPhoneError)
-                        this.setState(() => ({ errorResponse }))
-                    } else {
-                        this.setState(() => ({ verifyPhoneError: this.props.verifyPhoneError }))
-                    }
-                }
-            })
-    }
-
-    onFocus(event) {
-        let errorResponse = this.state.errorResponse;
-        errorResponse[event.target.name] = ''
-        switch (event.target.name) {
-            case 'otp':
-                this.setState(() => ({ errorResponse }));
-        }
-    }
 
     render() {
         const {
-            loadingVerification,
-            disableBtn,
-            successResponse,
-            loading,
-            verifyPhoneError,
-            resendVerCodeError,
-            errorResponse
         } = this.state
         const { authenticatedUser } = this.props;
         return (
@@ -135,7 +64,7 @@ class Navbar extends Component {
                     </div>
 
                 </div>
-                {
+                {/* {
                     loadingVerification ?
                         <div className="bg-red-600 text-white text-center rounded py-2 mb-2 shadow-lg">Sending otp to your phone...</div> :
                         <div>
@@ -144,8 +73,8 @@ class Navbar extends Component {
                                     <div className="bg-red-500 text-white text-center rounded py-2 mb-4 shadow-lg">Click <p className="font-semibold underline inline cursor-pointer" onClick={this.onSendVerificationCode}>here</p> to verify your phone number</div> : null
                             }
                         </div>
-                }
-                <div className="z-50 verifyModal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+                } */}
+                {/* <div className="z-50 verifyModal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
                     <div onClick={(event) => this.toggleModal(event)} className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
                     <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
                         <div className="modal-content text-left">
@@ -162,22 +91,13 @@ class Navbar extends Component {
                                             onFocus={this.onFocus}
                                         />
                                     </div>
-                                    {errorResponse.otp ? <p className="text-red-500 text-sm text-left italic my-2">{errorResponse.otp}</p> : null}
-                                    <div className="mt-6">
-                                        <button className={`${disableBtn ? 'opacity-50 cursor-not-allowed bg-primary-blue text-white text-sm py-2 px-8 rounded w-full focus:outline-none font-semibold' :
-                                            'bg-primary-blue hover:bg-light-primary text-white text-sm py-2 px-8 rounded w-full focus:outline-none font-semibold'}`}
-                                            type="submit">{loading ? <i className="fa fa-spinner fa-pulse"></i> : 'Verify'}
-                                        </button>
-                                    </div>
-                                    <p className="text-green-500 text-sm italic my-2">{successResponse}</p>
-                                    <p className="text-red-500 text-sm italic my-2">{verifyPhoneError}</p>
-                                    <p className="text-red-500 text-sm italic my-2">{resendVerCodeError}</p>
+                                   
                                 </form>
 
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
         )
@@ -212,9 +132,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         actions: bindActionCreators({
-            authenticatedUser,
-            resendVerificationAction,
-            phoneVerification
+            authenticatedUser
         }, dispatch)
     };
 }

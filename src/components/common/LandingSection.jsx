@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import Cookies from 'universal-cookie';
 import ScrollAnimation from 'react-animate-on-scroll';
-
-
-const cookies = new Cookies()
 
 class LandingSection extends Component {
   constructor(props) {
@@ -29,21 +25,21 @@ class LandingSection extends Component {
         </div>
         <div className="pt-4 lg:hidden">
           <Link to="/" className="flex-initial">
-            BRIDALKANDY
+            DAMMY'S CLOSET
           </Link>
         </div>
 
         <div className="flex items-center pt-6">
-          <Link to="/" className="flex-initial hidden lg:block font-bold text-red-500">
-          BRIDALKANDY
+          <Link to="/" className="flex-initial hidden lg:block font-bold text-lg text-red-500">
+          DAMMY'S CLOSET
           </Link>
           {this.state.isHamburgerClick ?
             <div className="flex-auto font-semibold md:mt-6 lg:mt-0 xl:mt-0 text-center md:text-center lg:text-right xl:text-right lg:items-center text-white text-xs mt-2 text-right">
               <NavLink to="/" activeClassName="active" exact={true} className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
                 HOME
           </NavLink>
-              <NavLink to="/services" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
-                SERVICES
+              <NavLink to="/my-account" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
+                ACCOUNT
             </NavLink>
             </div> :
             window.screen.width > 1000 ?
@@ -52,9 +48,20 @@ class LandingSection extends Component {
                   HOME
           </NavLink>
 
-                <NavLink to="/services" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
-                  SERVICES
+          <NavLink to="/Login" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
+                  LOG IN
             </NavLink>
+
+            <NavLink to="/cart" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
+            <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>
+                  CART
+                 
+            </NavLink>
+
+                <NavLink to="/services" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
+                  ACCOUNT
+            </NavLink>
+
 
                 <div className="ml-10 text-white text-xl inline-block">
                   <span className="mr-4 cursor-pointer"><i className="fa fa-facebook" aria-hidden="true"></i></span>
@@ -74,18 +81,14 @@ class LandingSection extends Component {
               >
                 <div className="text-white py-32">
                   <div className="mb-4 md:mb-0 lg:mb-0 xl:mb-0">
-                    <p className="font-semibold text-2xl md:text-5xl text-center tracking-wider leading-none mt-4">BUY YOUR WEDDING CLOTHES QUICKLY</p>
+                    <p className="font-semibold text-2xl md:text-5xl text-center tracking-wider leading-none mt-4">WELCOME TO DAMMY'S CLOSET</p>
                   </div>
                   <div>
                     <p className="font-semibold text-center tracking-wider text-xs md:text-base">We are always ready to deliver to your door step everyday.</p>
                   </div>
 
                  
-                  {/* <div className="text-center">
-                    <button className="text-white py-2 px-4 border-2 border-solid rounded-full rounded focus:outline-none mt-8">
-                      Download App
-              </button>
-                  </div> */}
+                 
                 </div>
 
               </ScrollAnimation>
@@ -95,15 +98,7 @@ class LandingSection extends Component {
             animateOut='fadeOut'
             duration={2}
           >
-            <div className="text-white py-32">
-              <div className="font-semibold text-5xl text-center tracking-wider leading-none mt-4 text-white">{this.props.contentName}</div>
-              <div className="font-semibold text-primary-gray text-center mt-6">{this.props.subtitle}</div>
-              <div className="text-center mt-8">
-                <button className="text-white py-2 px-4 border-2 border-solid rounded-full rounded focus:outline-none mt-8">
-                  Download App
-              </button>
-              </div>
-            </div>
+          
             </ScrollAnimation>
 
         }

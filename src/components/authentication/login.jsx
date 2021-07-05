@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,7 +14,7 @@ class Login extends Component {
 
   render() {
     const {} = this.props;
-    const { loading } = this.state;
+    const { } = this.state;
     return(
       <div
         className="pt-24 pb-40 bg-orange-200 px-4 md:px-0 lg:px-0 xl:px-0 min-h-screen"  

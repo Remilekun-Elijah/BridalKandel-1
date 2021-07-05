@@ -10,7 +10,7 @@ const Homepage = () => (
     <div className="min-h-screen flex flex-col">
         <LandingSection/>
         <div className="flex-grow">
-            <Promo/>
+            {/* <Promo/> */}
             <Packages/>
         </div>
         <Footer/>
