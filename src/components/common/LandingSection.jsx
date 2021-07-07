@@ -38,7 +38,14 @@ class LandingSection extends Component {
               <NavLink to="/" activeClassName="active" exact={true} className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
                 HOME
           </NavLink>
-              <NavLink to="/my-account" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
+              <NavLink to="/Login" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
+                LOGIN
+            </NavLink>
+            <NavLink to="/cart" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
+            <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>
+                CART
+            </NavLink>
+            <NavLink to="/my-account" activeClassName="active" className="nav-link block mt-4 hover:text-white lg:inline-block lg:mt-0 lg:mr-6 xl:mr-6">
                 ACCOUNT
             </NavLink>
             </div> :
