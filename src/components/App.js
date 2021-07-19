@@ -2,11 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Homepage from './homepage/Homepage';
 import Services from './services/Services';
-import Index from './authentication/Index';
-import ResetPassword from './authentication/ResetPassword';
+import login from './authentication/login';
 import NotFound from './common/NotFound';
 import NetworkDetector from './middleware/NetworkDetector';
-import AuthenticatedUser from './middleware/AuthenticatedUser';
+import register from './authentication/register'
 
 
 
@@ -18,8 +17,9 @@ const App = () => {
         <Switch>
         <Route exact path="/" component={NetworkDetector(Homepage)} />
         <Route exact path="/services" component={NetworkDetector(Services)} />
-        <Route exact path="/authentication" component={NetworkDetector(Index)} />
-        <Route exact path="/reset-password" component={NetworkDetector(ResetPassword)} />
+        <Route exact path="/login" component={NetworkDetector(login)} />
+        <Route exact path="/register" component={NetworkDetector(register)} />
+
         <Route component={NetworkDetector(NotFound)} />
         </Switch>
       </Router>
